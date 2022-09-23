@@ -298,11 +298,8 @@ class _ViewPostScreenState extends State<ViewPostScreen> {
                 suffixIcon: Container(
                   margin: EdgeInsets.only(right: 4.0),
                   width: 70.0,
-                  child: FlatButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30.0),
-                    ),
-                    color: Color(0xFF23B66F),
+                  child: ElevatedButton(
+
                     onPressed: () => print('Post comment'),
                     child: Icon(
                       Icons.send,

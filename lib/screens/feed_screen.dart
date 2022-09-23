@@ -258,7 +258,7 @@ class _FeedScreenState extends State<FeedScreen> {
                 size: 30.0,
                 color: Colors.black,
               ),
-              title: Text(''),
+
             ),
             BottomNavigationBarItem(
               icon: Icon(
@@ -266,17 +266,13 @@ class _FeedScreenState extends State<FeedScreen> {
                 size: 30.0,
                 color: Colors.grey,
               ),
-              title: Text(''),
+
             ),
             BottomNavigationBarItem(
               icon: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 5.0, vertical: 10.0),
-                child: FlatButton(
-                  padding: EdgeInsets.symmetric(vertical: 10.0),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30.0),
-                  ),
-                  color: Color(0xFF23B66F),
+                child: ElevatedButton(
+
                   onPressed: () => print('Upload photo'),
                   child: Icon(
                     Icons.add,
@@ -285,7 +281,7 @@ class _FeedScreenState extends State<FeedScreen> {
                   ),
                 ),
               ),
-              title: Text(''),
+
             ),
             BottomNavigationBarItem(
               icon: Icon(
@@ -293,7 +289,7 @@ class _FeedScreenState extends State<FeedScreen> {
                 size: 30.0,
                 color: Colors.grey,
               ),
-              title: Text(''),
+
             ),
             BottomNavigationBarItem(
               icon: Icon(
@@ -301,7 +297,7 @@ class _FeedScreenState extends State<FeedScreen> {
                 size: 30.0,
                 color: Colors.grey,
               ),
-              title: Text(''),
+
             ),
           ],
         ),

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_instagram_feed_ui_redesign/login.dart';
-import 'package:flutter_instagram_feed_ui_redesign/screens/feed_screen.dart';
+import 'package:flutter_instagram_feed_ui_redesign/loginScreen.dart';
+import 'package:flutter_instagram_feed_ui_redesign/PostScreen.dart';
 import 'package:flutter_instagram_feed_ui_redesign/signup.dart';
 import 'package:provider/provider.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import 'dart:convert';
+import 'package:flutter_login/flutter_login.dart';
 import 'package:timeago/timeago.dart' as timeago;
 
 class Store1 extends ChangeNotifier {
@@ -30,19 +31,15 @@ class UserStorage {
   }
 
   Future<dynamic> readUsers() async {
-
       final file = await _localFile;
 
       // 파일 읽기
       String contents = await file.readAsString();
       return contents;
-
   }
 
   Future<File> writeUsers(String user, String pw, String email) async {
     final file = await _localFile;
-
-
     var tmp = {user : {'password' : pw, 'email' : email}};
 
     // 파일 쓰기
@@ -56,7 +53,6 @@ void main() {
       ChangeNotifierProvider(
         create: (c) => Store1(),
         child: MyApp()
-
       )
   );
 }
@@ -70,8 +66,8 @@ class MyApp extends StatelessWidget {
         title: 'Hyunmi Flutter Demo',
         debugShowCheckedModeBanner: false,
         home: [
-          Card(child: loginWidget()),
-          FeedScreen(),
+          LoginScreen(), // DBG 아마 카드 필요할듯
+          PostScreen(),
           Card(child: SignUpWidget())]
         [screenIndex]);
   }
